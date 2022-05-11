@@ -3,6 +3,10 @@ from argparse import Namespace as options
 import os
 import random
 import yaml
+try:
+    from yaml import CLoader as Loader
+except ImportError:
+    from yaml import Loader
 import string
 import sys
 import bcrypt
@@ -46,7 +50,7 @@ def main():
     else:
         config = 'config.yml'
     with open(config, 'r') as ymlfile:
-        config = yaml.load(ymlfile, Loader=yaml.FullLoader)
+        config = yaml.load(ymlfile, Loader=Loader)
         Utils.service_config_override(config)
 
     BmajUser.set_config(config)

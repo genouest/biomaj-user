@@ -1,3 +1,6 @@
+
+3.0.12:
+  Normalize yaml loader between biomaj components and fix dependencies
 3.0.11:
   Force yaml loader
 3.0.10:

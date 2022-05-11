@@ -3,6 +3,10 @@ import os
 import random
 import string
 import yaml
+try:
+    from yaml import CLoader as Loader
+except ImportError:
+    from yaml import Loader
 from flask import Flask
 from flask import jsonify
 from flask import request
@@ -18,7 +22,7 @@ if 'BIOMAJ_CONFIG' in os.environ:
 
 config = None
 with open(config_file, 'r') as ymlfile:
-    config = yaml.load(ymlfile, Loader=yaml.FullLoader)
+    config = yaml.load(ymlfile, Loader=Loader)
     Utils.service_config_override(config)
 
 BmajUser.set_config(config)
