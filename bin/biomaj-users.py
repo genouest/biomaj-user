@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import argparse
 from argparse import Namespace as options
 import os
