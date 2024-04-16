@@ -171,11 +171,11 @@ class BmajUser(object):
         """
         Create a new user
         """
-        hashed = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+        hashed = str(bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()))
         if self.user is None:
             self.user = {
                 'id': self.id,
-                'hashed_password': str(hashed),
+                'hashed_password': hashed,
                 'email': email,
                 'is_ldap': False,
                 'apikey': ''.join(random.SystemRandom().choice(string.ascii_uppercase + string.digits) for _ in range(10))
