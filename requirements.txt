@@ -8,3 +8,5 @@ flask
 python-consul
 tabulate
 PyYAML
+python3-bcrypt
+python3-markupsafe
