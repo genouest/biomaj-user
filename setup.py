@@ -14,6 +14,10 @@ with open(os.path.join(here, 'CHANGES.txt')) as f:
     CHANGES = f.read()
 
 
+with open('requirements.txt') as f:
+    requirements = f.read().splitlines()
+
+
 config = {
     'description': 'BioMAJ user management library',
     'long_description': README + '\n\n' + CHANGES,
@@ -40,16 +44,7 @@ config = {
         # that you indicate whether you support Python 2, Python 3 or both.
         'Programming Language :: Python :: 3',
     ],
-    'install_requires': [
-                         'ldap3>=2.2.4',
-                         'pymongo>=3.12.3,<4',
-                         'py-bcrypt',
-                         'flask',
-                         'PyYAML',
-                         'tabulate',
-                         'python-consul',
-                         'biomaj_core'
-                        ],
+    'install_requires': requirements,
     'tests_require': ['nose', 'mock'],
     'test_suite': 'nose.collector',
     'packages': find_packages(),
