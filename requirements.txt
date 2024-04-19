@@ -8,4 +8,3 @@ flask
 python-consul
 tabulate
 PyYAML
-python3-markupsafe
