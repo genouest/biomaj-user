@@ -87,7 +87,7 @@ def main():
     if options.action == 'update':
         update = {}
         if options.passwd:
-            update['hashed_password'] = bcrypt.hashpw(options.passwd, user.user['hashed_password'])
+            update['hashed_password'] = str(bcrypt.hashpw(options.passwd.encode('utf-8'), user.user['hashed_password']))
         if options.email:
             update['email'] = options.email
         if update.items():
