@@ -155,7 +155,7 @@ class BmajUser(object):
                 return False
 
         else:
-            hashed = bcrypt.hashpw(password, self.user['hashed_password'])
+            hashed = str(bcrypt.hashpw(password.encode('utf-8'), self.user['hashed_password']))
             if hashed == self.user['hashed_password']:
                 return True
             else:
@@ -171,7 +171,7 @@ class BmajUser(object):
         """
         Create a new user
         """
-        hashed = bcrypt.hashpw(password, bcrypt.gensalt())
+        hashed = str(bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt()))
         if self.user is None:
             self.user = {
                 'id': self.id,
