@@ -45,7 +45,7 @@ config = {
         'Programming Language :: Python :: 3',
     ],
     'install_requires': requirements,
-    'tests_require': ['nose', 'mock'],
+    'tests_require': ['nose'],
     'test_suite': 'nose.collector',
     'packages': find_packages(),
     'include_package_data': True,

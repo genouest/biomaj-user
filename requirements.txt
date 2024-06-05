@@ -1,5 +1,4 @@
 biomaj_core
-mock
 ldap3>=2.2.4
 pymongo>=3.12.3,<4
 py-bcrypt
